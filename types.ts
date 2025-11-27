@@ -1,6 +1,7 @@
 import React from 'react';
 
-export type PropertyType = 'mountain' | 'safari' | 'urban';
+// Update PropertyType to match database
+export type PropertyType = 'mountain_villa' | 'safari_experience' | 'urban_apartment';
 
 export interface Amenity {
   icon: React.ReactNode;
@@ -52,7 +53,7 @@ export interface Apartment {
 // Database Schema Types (Matches Implementation Plan)
 export interface Property {
   id: string;
-  type: 'mountain_villa' | 'safari' | 'apartment';
+  type: PropertyType; // Now using the updated PropertyType
   name: string;
   location: string;
   description: string;
@@ -60,4 +61,18 @@ export interface Property {
   currency: 'KES' | 'USD';
   max_guests: number;
   status: 'available' | 'maintenance';
+}
+
+// Booking type for database
+export interface Booking {
+  id: string;
+  user_id: string;
+  property_type: PropertyType;
+  property_name: string;
+  check_in: string;
+  check_out: string;
+  guests: number;
+  total_price: number;
+  status: 'pending' | 'confirmed' | 'cancelled';
+  created_at: string;
 }
