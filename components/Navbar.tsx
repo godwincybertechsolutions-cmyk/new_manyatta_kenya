@@ -29,16 +29,7 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className={`p-2 rounded-full transition-colors ${scrolled ? 'bg-primary text-white' : 'bg-white text-primary'}`}>
-            <Mountain size={24} />
-          </div>
-          <span className={`font-serif text-2xl font-bold tracking-wide ${
-            scrolled ? 'text-dark' : 'text-white drop-shadow-md'
-          }`}>
-            {APP_NAME}
-          </span>
-        </Link>
+<Link to="/" className="flex items-center group"> <img src="/path/to/logo.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} /> </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
