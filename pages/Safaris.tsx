@@ -3,9 +3,14 @@ import { Map, Clock, ArrowRight, Compass, ChevronDown, ChevronUp, MapPin, BedDou
 import { SAFARI_ITINERARIES } from '../constants';
 import SectionHeader from '../components/SectionHeader';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '../src/auth/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Safaris: React.FC = () => {
   const [expandedItinerary, setExpandedItinerary] = useState<string | null>(null);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleItinerary = (id: string) => {
     setExpandedItinerary(expandedItinerary === id ? null : id);
@@ -92,7 +97,16 @@ const Safaris: React.FC = () => {
                           {expandedItinerary === itinerary.id ? 'Close Itinerary' : 'View Day-by-Day'}
                           {expandedItinerary === itinerary.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </button>
-                        <button className="flex-1 bg-primary hover:bg-[#c4492e] text-white px-6 py-3 rounded text-sm font-medium transition-colors uppercase tracking-wide shadow-md">
+                        <button
+                          className="flex-1 bg-primary hover:bg-[#c4492e] text-white px-6 py-3 rounded text-sm font-medium transition-colors uppercase tracking-wide shadow-md"
+                          onClick={() => {
+                            if (!user) {
+                              navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+                              return;
+                            }
+                            navigate('/others');
+                          }}
+                        >
                           Book Now
                         </button>
                       </div>
