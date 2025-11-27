@@ -2,8 +2,13 @@ import React from 'react';
 import { Wifi, Shield, Coffee, Utensils, Check, Fish, Mountain, Camera } from 'lucide-react';
 import { MOUNTAIN_VILLA_PRICING } from '../constants';
 import SectionHeader from '../components/SectionHeader';
+import { useAuth } from '../src/auth/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const MountainVillas: React.FC = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div className="w-full pt-20">
       {/* Hero */}
@@ -46,7 +51,16 @@ const MountainVillas: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <button className="w-full py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-medium uppercase text-xs tracking-widest">
+                <button
+                  className="w-full py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded-lg font-medium uppercase text-xs tracking-widest"
+                  onClick={() => {
+                    if (!user) {
+                      navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+                      return;
+                    }
+                    navigate('/others');
+                  }}
+                >
                   Reserve Now
                 </button>
               </div>
@@ -116,7 +130,16 @@ const MountainVillas: React.FC = () => {
                     <span className="font-serif text-lg text-primary">Ksh 6,000<span className="text-xs text-gray-500">/pp/day</span></span>
                   </div>
                 </div>
-                <button className="mt-8 bg-primary hover:bg-[#c4492e] px-6 py-3 rounded text-sm font-medium transition-colors w-full">
+                <button
+                  className="mt-8 bg-primary hover:bg-[#c4492e] px-6 py-3 rounded text-sm font-medium transition-colors w-full"
+                  onClick={() => {
+                    if (!user) {
+                      navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+                      return;
+                    }
+                    navigate('/others');
+                  }}
+                >
                   Add to Booking
                 </button>
               </div>
