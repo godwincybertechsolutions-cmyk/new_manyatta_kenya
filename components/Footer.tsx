@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mountain, Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { APP_NAME } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -28,11 +29,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-serif text-lg mb-6 text-primary">Explore</h4>
             <ul className="space-y-3 text-sm text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Mountain Villas</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Safari Experiences</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Urban Living</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gallery</a></li>
+              <li><Link to="/mountain-villas" className="hover:text-white transition-colors">Mountain Villas</Link></li>
+              <li><Link to="/safaris" className="hover:text-white transition-colors">Safari Experiences</Link></li>
+              <li><Link to="/urban-apartments" className="hover:text-white transition-colors">Urban Living</Link></li>
+              <li><Link to="/others" className="hover:text-white transition-colors">Our Story</Link></li>
+              <li><a href="#gallery" className="hover:text-white transition-colors">Gallery</a></li>
             </ul>
           </div>
 
