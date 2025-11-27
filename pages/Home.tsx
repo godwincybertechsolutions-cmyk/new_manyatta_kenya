@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Mountain, Binoculars, Building2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import BookingWidget from '../components/BookingWidget';
 import SectionHeader from '../components/SectionHeader';
+import { useAuth } from '../src/auth/AuthContext';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useAuth();
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -59,6 +63,13 @@ const Home: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
             className="bg-primary hover:bg-[#c4492e] text-white px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase transition-all flex items-center gap-3 group"
+            onClick={() => {
+              if (!user) {
+                navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+                return;
+              }
+              navigate('/others');
+            }}
           >
             Start Your Journey
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
