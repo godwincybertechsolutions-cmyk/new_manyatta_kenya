@@ -2,8 +2,13 @@ import React from 'react';
 import { Bed, Bath, Move, Check, Car, User } from 'lucide-react';
 import { URBAN_APARTMENTS } from '../constants';
 import SectionHeader from '../components/SectionHeader';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from '../src/auth/AuthContext';
 
 const UrbanApartments: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user } = useAuth();
   return (
     <div className="w-full pt-20">
       {/* Hero */}
@@ -76,7 +81,16 @@ const UrbanApartments: React.FC = () => {
                   </div>
 
                   <div className="flex gap-3">
-                    <button className="flex-1 bg-dark text-white py-3 rounded text-sm font-medium uppercase tracking-wide hover:bg-black transition-colors">
+                    <button
+                      className="flex-1 bg-dark text-white py-3 rounded text-sm font-medium uppercase tracking-wide hover:bg-black transition-colors"
+                      onClick={() => {
+                        if (!user) {
+                          navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+                          return;
+                        }
+                        navigate('/others');
+                      }}
+                    >
                       Book Stay
                     </button>
                     <button className="flex-1 border border-gray-200 text-dark py-3 rounded text-sm font-medium uppercase tracking-wide hover:bg-gray-50 transition-colors">
