@@ -7,6 +7,8 @@ import MountainVillas from './pages/MountainVillas';
 import Safaris from './pages/Safaris';
 import UrbanApartments from './pages/UrbanApartments';
 import Others from './pages/Others';
+import Auth from './pages/Auth';
+import { AuthProvider } from './src/auth/AuthContext';
 
 // Scroll to top helper
 const ScrollToTop = () => {
@@ -19,22 +21,25 @@ const ScrollToTop = () => {
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-white font-sans text-dark selection:bg-primary selection:text-white">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/mountain-villas" element={<MountainVillas />} />
-            <Route path="/safaris" element={<Safaris />} />
-            <Route path="/urban-apartments" element={<UrbanApartments />} />
-            <Route path="/others" element={<Others />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="flex flex-col min-h-screen bg-white font-sans text-dark selection:bg-primary selection:text-white">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/mountain-villas" element={<MountainVillas />} />
+              <Route path="/safaris" element={<Safaris />} />
+              <Route path="/urban-apartments" element={<UrbanApartments />} />
+              <Route path="/others" element={<Others />} />
+              <Route path="/auth" element={<Auth />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 };
 
