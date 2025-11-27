@@ -9,7 +9,7 @@ const UrbanApartments: React.FC = () => {
       {/* Hero */}
       <div className="relative h-[50vh] w-full bg-dark">
         <img 
-          src="https://picsum.photos/seed/urbanhero/1920/1080" 
+          src="https://kingsdevelopersapi.co.ke/blog/d10dcefb-45ac-4081-80f8-2b0485469c4c/image-1732602254089-630681340.png" 
           alt="Nairobi Skyline" 
           className="w-full h-full object-cover opacity-70"
         />
