@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Calendar, Users, MapPin, ChevronDown } from 'lucide-react';
 import { PropertyType } from '../types';
+import { useAuth } from '../src/auth/AuthContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const BookingWidget: React.FC = () => {
   const [activeTab, setActiveTab] = useState<PropertyType>('mountain');
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden -mt-16 relative z-30 hidden md:block border border-gray-100">
@@ -76,7 +81,16 @@ const BookingWidget: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <button className="bg-dark hover:bg-black text-white h-full rounded-lg flex flex-col items-center justify-center transition-all shadow-lg">
+        <button
+          className="bg-dark hover:bg-black text-white h-full rounded-lg flex flex-col items-center justify-center transition-all shadow-lg"
+          onClick={() => {
+            if (!user) {
+              navigate('/auth?redirect=' + encodeURIComponent(location.pathname));
+              return;
+            }
+            navigate('/others');
+          }}
+        >
           <span className="text-xs opacity-80 uppercase tracking-widest">Check</span>
           <span className="font-serif text-xl italic">Availability</span>
         </button>
