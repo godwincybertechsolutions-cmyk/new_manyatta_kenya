@@ -29,7 +29,9 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-<Link to="/" className="flex items-center group"> <img src="/path/to/logo.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} /> </Link>
+<Link to="/" className="flex items-center group"> 
+  <img src="/path/to/logo.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} />
+</Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
