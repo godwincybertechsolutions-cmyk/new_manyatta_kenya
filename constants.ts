@@ -133,7 +133,7 @@ export const COFFEE_PRODUCTS = [
     name: "Mt. Elgon Reserve",
     roast: "Medium Dark",
     price: "Ksh 1,200",
-    image: "https://picsum.photos/seed/coffee1/400/400",
+    image: "https://previews.dropbox.com/p/thumb/AC2OB6hLNbrf3f6dZxiqU8ZILCzXft3k1n6ySuvDG_QS3zLu9KG95NR0jGzOtOsiNW1egEhOUvAt3MjFXFp8O-in2ETO0Kv0a7XDGdRYxSGWAqifFS2RWfT3ban7Wt74GmZHvaMuT8KVUuNDTNJNGTQ43n1S7X6jLlOSwO4SWUGyFD1X3F8u4A5_Nt2p3dt1dYE63sKiob8jIG7bIG0kDNRPB-bnNdTr8MJOvDbmE51z4E1hF5A0j6AdXhZk56Uge8oh8vU9s1e3njUs2f4nVCwU479nX9Uo8rGrMPK0CurlXRmh8kcdq7o2-7P97CBG0IMutfIhx69mjRl7eVMeKHUm/p.png",
     notes: "Chocolate, Citrus, Spice"
   },
   {
@@ -141,7 +141,7 @@ export const COFFEE_PRODUCTS = [
     name: "Volcanic Gold",
     roast: "Light",
     price: "Ksh 1,500",
-    image: "https://picsum.photos/seed/coffee2/400/400",
+    image: "https://previews.dropbox.com/p/thumb/AC1zW4cM_pB4vPCPxkvc-flXez_Mp6prcaNgoq6iOd0yLwkvkaZTh2F709Cwjk672UCJiVNls5GuzTgwoeLY1IB8ycN3giY-4MGtm3ozEZ1sfZO0LjtQhxcVyHp6LkD-Yj9kI-ELlRu-I-LY4ubHclI7e-KRdLWrANlTHHE7S-KXQ1lUAd9HEtLl-CYTGFVfniTKSedpcZCqtYnWx5JsieKgcd1R5NrmraBx6PdYF682gl_Y2Q4sgKh_vKMfvlGhcK0c-90uZwNqNS3_-i8Cmdhg2sdRoB-LeBDmniBQMlmEHxBHqzaZLQs3qYRHpkQ3h1qxq1klvH_JdMrbU_zvBwPG/p.png",
     notes: "Floral, Berry, Honey"
   }
 ];
