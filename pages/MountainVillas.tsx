@@ -9,7 +9,7 @@ const MountainVillas: React.FC = () => {
       {/* Hero */}
       <div className="relative h-[70vh] w-full">
         <img 
-          src="https://picsum.photos/seed/villahero/1920/1080" 
+          src="https://abirikenya.com/wp-content/uploads/2019/02/skogafoss-waterfall-dinamet7-water-161950.jpeg" 
           alt="Kirinyaga Haven" 
           className="w-full h-full object-cover"
         />
