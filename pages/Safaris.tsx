@@ -16,7 +16,7 @@ const Safaris: React.FC = () => {
       {/* Hero */}
       <div className="relative h-[60vh] w-full bg-dark overflow-hidden">
         <img 
-          src="https://picsum.photos/seed/safarihero/1920/1080" 
+          src="https://www.onthegotours.com/repository/Tsavo-West-National-Park-watering-hole--Kenya-safaris--On-The-Go-Tours-831311706788391_crop_flip_2250_1200_f2f2f2_center-center.jpg" 
           alt="Safari" 
           className="w-full h-full object-cover opacity-60"
         />
