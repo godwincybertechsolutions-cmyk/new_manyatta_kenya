@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
 <Link to="/" className="flex items-center group"> 
-  <img src="/path/to/logo.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} />
+  <img src="https://previews.dropbox.com/p/thumb/AC0gIHz5OkQtfL1xlA2zYv2jgSid9OnVl15xdhQ6QPzLV5UwF7uwq3i7DlAC24zbXHoqKpMZy7JX79Lx21ZZJYGkqnSBxjrYUGxctdW50mVPEQlRIiwrOYYkHZPQyRBeRzfHnSW5S21CC8TrG2KMK30il1uxVMnAU_gpH4rPz83MbYLOVyB15arlV1B3VDNZ8CkxdEBbuQKtzjggxJZRVMFXLqA56sDLUWMJimNSr8rLWsUYRsVpCHJh3MYsesBInTuwtLdEbWhWi1Noz_i5z7xjnJyb6EEH8vlsoVlPwfwjGoHDzVeAdwFSpEluBnn1I7n3q4kxJm3ulrtsPnqSZw-l/p.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} />
 </Link>
 
         {/* Desktop Nav */}
